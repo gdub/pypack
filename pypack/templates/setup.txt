@@ -1,0 +1,18 @@
+from distribute_setup import use_setuptools
+use_setuptools()
+
+from setuptools import setup
+
+
+setup(
+    name='${name}',
+    version='${version}',
+    author='${author}',
+    author_email='${author_email}',
+    packages=['${name}'],
+    #scripts=['bin/stowe-towels.py','bin/wash-towels.py'],
+    url='${url}',
+    license='LICENSE.txt',
+    description='${description}',
+    long_description=open('README.txt').read(),
+)
