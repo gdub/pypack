@@ -3,6 +3,10 @@ import os
 from string import Template
 
 
+__version__ = '0.8'
+__url__ = 'http://pypi.python.org/pypi/python-package-template/'
+
+
 class PypackError(Exception): pass
 class PathExists(PypackError): pass
 
@@ -11,7 +15,7 @@ class FSNode(object):
 
     def __init__(self, path):
         self.path = path
-        
+
 
 class File(FSNode):
 
@@ -36,7 +40,7 @@ class File(FSNode):
             with open(self.template_path) as template_file:
                 template = Template(template_file.read())
                 f.write(template.substitute(**context))
-            
+
 
 
 class Directory(FSNode):
@@ -74,7 +78,7 @@ recursive-include docs *.txt""",
         }
         self.context['dashes'] = '=' * len(self.context['name'])
         self.context['version_and_date'] = '%s - %s' % (self.context['version'],
-                                                        self.context['date']) 
+                                                        self.context['date'])
         self.context['version_and_date_dashes'] = '=' * len(self.context['version_and_date'])
         self.contents = [
             File('CHANGES.txt', 'changes.txt'),
@@ -94,7 +98,7 @@ recursive-include docs *.txt""",
         """
         # TODO: implement
         return name
-    
+
     def ask_for_context(self):
         pass
 
