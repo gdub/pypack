@@ -19,7 +19,7 @@ class FSNode(object):
 
 class File(FSNode):
 
-    template_dir = os.path.join(os.path.dirname(__name__), 'pypack', 'templates')
+    template_dir = os.path.join(__path__[0], 'templates')
 
     def __init__(self, path, template=None, substitutions=True):
         super(File, self).__init__(path)
@@ -108,7 +108,7 @@ recursive-include docs *.txt""",
         else:
             os.mkdir(self.pkg_dir)
         for content in self.contents:
-            print('copying', content.path, 'to', self.pkg_dir)
+            print "creating file:", os.path.join(self.pkg_dir, content.path)
             content.copy_to(self.pkg_dir, self.context)
 
 
