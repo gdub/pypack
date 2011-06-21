@@ -1,7 +1,7 @@
+.. -*- restructuredtext -*-
 ================================
 python-package-template (pypack)
 ================================
-.. -*- restructuredtext -*-
 
 Provides a command to easily create a standard Python package layout (i.e.
 README, package directory, etc.), following the `Hitchhiker's Guide to
