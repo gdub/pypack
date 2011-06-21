@@ -3,6 +3,11 @@ Changes
 =======
 
 
+0.8.1 - In development
+======================
+* n/a
+
+
 0.8 - June 21, 2011
 ===================
 * Initial release.

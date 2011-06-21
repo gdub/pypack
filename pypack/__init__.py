@@ -3,7 +3,7 @@ import os
 from string import Template
 
 
-__version__ = '0.8'
+__version__ = '0.8.1-pre'
 __url__ = 'http://pypi.python.org/pypi/python-package-template/'
 
 
