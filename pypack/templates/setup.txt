@@ -10,9 +10,8 @@ setup(
     author='${author}',
     author_email='${author_email}',
     packages=['${name}'],
-    #scripts=['bin/stowe-towels.py','bin/wash-towels.py'],
     url='${url}',
-    license='LICENSE.txt',
+    license='See LICENSE.txt',
     description='${description}',
     long_description=open('README.txt').read(),
 )
