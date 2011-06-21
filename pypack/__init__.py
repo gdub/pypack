@@ -98,7 +98,8 @@ class PackageBuilder(object):
             'version': options.version,
             'manifest_items': """\
 include *.txt
-recursive-include docs *.txt""",
+recursive-include docs *.txt
+prune dist""",
         }
         context['dashes'] = '=' * len(context['name'])
         context['version_and_date'] = '%s - %s' % (context['version'],
