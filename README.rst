@@ -24,19 +24,23 @@ Features
 
 Quickstart
 ==========
-#. Create and change directory into desired location to create package::
-
-       mkdir myproj
-       cd myproj
-
 #. Run ``pypack``, specifying the name of your new package (optionally, use
-   command line options to provide additional information, see ``pypack -h``)::
+   command line options to provide additional information, see ``pypack -h``).
+   
+   a) If you want to create a new Python package in an existing directory,
+      just specify the desired Python package name::
+      
+          pypack mynewpackage
+          
+   b) If you want to specify different directory, you may optionally use the
+      ``-t`` (or ``--target``) option to specify a target, non-existent
+      directory::
 
-       pypack mynewpackage
+          pypack mynewpackage -t /new/path
 
-#. Review/edit generated files
+#. Review/edit the generated files
 #. Add your code, documentation, etc.
-#. Create distribution tarball/egg::
+#. Create distribution tarball::
 
        cd mynewpackage
        python setup.py sdist
