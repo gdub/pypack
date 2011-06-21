@@ -54,6 +54,12 @@ Quickstart
        python setup.py sdist upload
 
 
+Download
+========
+* PyPI: http://pypi.python.org/pypi/python-package-template/
+* Source: https://bitbucket.org/gdub/python-package-template/
+
+
 TODO
 ====
 * Sphinx documentation layout, or at least an option to create a docs
