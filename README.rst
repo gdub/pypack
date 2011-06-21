@@ -1,4 +1,3 @@
-.. -*- restructuredtext -*-
 ================================
 python-package-template (pypack)
 ================================
