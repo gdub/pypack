@@ -45,10 +45,6 @@ class File(FSNode):
 
 class Directory(FSNode):
 
-    def __init__(self, path, template=None, recurse=True):
-        super(Directory, self).__init__(path)
-        self.recurse = recurse
-
     def copy_to(self, dir, context):
         file_path = os.path.join(dir, self.path)
         os.mkdir(file_path)
@@ -56,22 +52,20 @@ class Directory(FSNode):
 
 class PackageBuilder(object):
 
-    def __init__(self, name, dir=None):
-        """
-        dir specifies the directory to build the package in; if None, then
-        build package in the current directory.
-        """
+    def __init__(self, name, options):
         self.name = self.check_name(name)
-        self.dir = dir if dir is not None else os.getcwd()
-        self.pkg_dir = os.path.join(self.dir, self.name)
+        if not options.target:
+            options.target = os.path.join(os.getcwd(), name)
+        self.target_dir = options.target
+        self.pkg_dir = os.path.join(options.target, name)
         self.context = {
-            'author': 'Joe Smith',
-            'author_email': 'joe@smith.com',
-            'name': 'mypackage',
-            'description': 'This is a description.',
-            'url': 'http://mysite.com',
+            'author': options.author,
+            'author_email': options.email,
+            'name': name,
+            'description': options.desc,
+            'url': options.url,
             'date': datetime.date.today().strftime('%B %d, %Y'),
-            'version': 0.7,
+            'version': options.version,
             'manifest_items': """\
 include *.txt
 recursive-include docs *.txt""",
@@ -96,23 +90,16 @@ recursive-include docs *.txt""",
         """
         Ensure that given name is a valid Python package name.
         """
+        if not name or (name and len(name) < 2):
+            raise PypackError("Package name must be at least two characters.")
         # TODO: implement
         return name
 
-    def ask_for_context(self):
-        pass
-
     def make_package(self):
-        if os.path.exists(self.pkg_dir):
-            raise PathExists("Path: '%s' already exists" % self.pkg_dir)
-        else:
-            os.mkdir(self.pkg_dir)
+        if os.path.exists(self.target_dir):
+            raise PathExists("Target directory exists; aborting.")
+        os.mkdir(self.target_dir)
+        os.mkdir(self.pkg_dir)
         for content in self.contents:
             print "creating file:", os.path.join(self.pkg_dir, content.path)
             content.copy_to(self.pkg_dir, self.context)
-
-
-if __name__ == "__main__":
-    name = raw_input("Enter name for new package: ")
-    builder = PackageBuilder(name)
-    builder.make_package()
