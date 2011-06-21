@@ -24,9 +24,9 @@ def pypack_command():
     parser.add_option("-t", "--target", dest="target", default=None,
                       help=("Specify a target directory to place the package"
                             " skeleton files in (the directory must not"
-                            " already exist).  If not given, then directory"
-                            " will default to the given name of the package,"
-                            " and will be placed in the current directory."))
+                            " already exist).  If not given, then new package"
+                            " contents will be placed in the current"
+                            " directory."))
     parser.add_option("-u", "--url", dest="url", default="",
                       help=("The URL to use for the created package."))
 #    parser.add_option("-l", "--license",  dest="license",

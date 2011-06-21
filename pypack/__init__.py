@@ -66,7 +66,7 @@ class PackageBuilder(object):
     def __init__(self, name, options, contents=None):
         self.name = self.check_name(name)
         if not options.target:
-            options.target = os.path.join(os.getcwd(), name)
+            options.target = os.getcwd()
         self.target_dir = options.target
         self.pkg_dir = os.path.join(options.target, name)
         self.options = options
@@ -121,11 +121,12 @@ prune dist""",
         """
         Create the package and its contents.
         """
-        if os.path.exists(self.target_dir):
-            raise PathExists("Target directory exists; aborting.")
-        os.mkdir(self.target_dir)
-        os.mkdir(self.pkg_dir)
+        if self.target_dir != os.getcwd():
+            if os.path.exists(self.target_dir):
+                raise PathExists("Target directory exists; aborting.")
+            os.mkdir(self.target_dir)
+        #os.mkdir(self.pkg_dir)
         for content in self.contents:
             print "creating file:", os.path.join(self.pkg_dir, content.path)
-            content.copy_to(self.pkg_dir,
+            content.copy_to(self.target_dir,
                             self.build_context(self.name, self.options))
