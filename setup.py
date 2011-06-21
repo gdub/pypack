@@ -21,6 +21,6 @@ setup(
     license='MIT',
     description=("Provides a command to easily create a standard Python"
                  " package layout (i.e. package directory, README file,"
-                 " setup.py, etc."),
+                 " setup.py, etc.)."),
     long_description=open('README.rst').read(),
 )
