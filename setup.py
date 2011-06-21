@@ -12,7 +12,7 @@ setup(
     author='Gary Wilson Jr.',
     author_email='gary.wilson@gmail.com',
     packages=['pypack'],
-    entry_points = {
+    entry_points={
         'console_scripts': [
             'pypack = pypack.commands:pypack_command',
         ],
@@ -22,5 +22,5 @@ setup(
     description=("Provides a command to easily create a standard Python"
                  " package layout (i.e. package directory, README file,"
                  " setup.py, etc."),
-    long_description=open('README.txt').read(),
+    long_description=open('README.rst').read(),
 )
