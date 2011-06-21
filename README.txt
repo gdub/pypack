@@ -1,6 +1,7 @@
 ================================
 python-package-template (pypack)
 ================================
+.. -*- restructuredtext -*-
 
 Provides a command to easily create a standard Python package layout (i.e.
 README, package directory, etc.), following the `Hitchhiker's Guide to
@@ -14,7 +15,7 @@ Features
 * Creates a complete Python package template, ready for creating distribution
   files and uploading to the `Python package index (PyPI)`_.
 * Uses Distribute by default.
-* Manifest.in template, with inclusion of readme and other standard files, as
+* MANIFEST.in template, with inclusion of README and other standard files, as
   well as ignoring of ``dist/`` directory that gets created when building the
   the package's distribution files.
 * No external dependencies, only relies on Python standard library.
@@ -26,15 +27,16 @@ Quickstart
 ==========
 #. Create and change directory into desired location to create package::
 
-       mkdir myproj && cd myproj
+       mkdir myproj
+       cd myproj
 
-#. Run ``pypack``, specifing the name of your new package::
+#. Run ``pypack``, specifying the name of your new package (optionally, use
+   command line options to provide additional information, see ``pypack -h``)::
 
        pypack mynewpackage
 
-#. Answer questions about your new package
-#. Review generated files
-#. Add your code
+#. Review/edit generated files
+#. Add your code, documentation, etc.
 #. Create distribution tarball/egg::
 
        cd mynewpackage
@@ -51,13 +53,14 @@ Quickstart
 
 TODO
 ====
-* Sphinx documentation layout
+* Sphinx documentation layout, or at least an option to create a docs
+  directory.
 * Support for a license file, allowing selection from a list of common
   open-source license templates
 * GitHub and Bitbucket compatibility for displaying readme file
 * git/hg ignore files
-* Allow use of command-line options to set values for author, license, etc.
 * Allow use of config file to specify default options for author, license, etc.
+* An interactive option that prompts for needed info.
 
 
 Similar Projects
