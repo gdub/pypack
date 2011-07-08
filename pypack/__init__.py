@@ -3,7 +3,7 @@ import os
 from string import Template
 
 
-__version__ = '0.8.1-pre'
+__version__ = '0.8.1'
 __url__ = 'http://pypi.python.org/pypi/python-package-template/'
 
 
@@ -97,6 +97,7 @@ class PackageBuilder(object):
             'date': datetime.date.today().strftime('%B %d, %Y'),
             'version': options.version,
             'manifest_items': """\
+include distribute_setup.py
 include *.txt
 recursive-include docs *.txt
 prune dist""",

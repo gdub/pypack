@@ -1,5 +1,7 @@
+include distribute_setup.py
 include MANIFEST.in
 include *.txt
+include *.rst
 recursive-include docs *
 recursive-include pypack/templates *
 prune dist

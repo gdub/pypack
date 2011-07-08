@@ -17,6 +17,7 @@ setup(
             'pypack = pypack.commands:pypack_command',
         ],
     },
+    include_package_data = True,
     url=pypack.__url__,
     license='MIT',
     description=("Provides a command to easily create a standard Python"
