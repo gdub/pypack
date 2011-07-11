@@ -70,6 +70,7 @@ TODO
 * git/hg ignore files
 * Allow use of config file to specify default options for author, license, etc.
 * An interactive option that prompts for needed info.
+* Add support for a package with a single module and no package.
 
 
 Similar Projects
