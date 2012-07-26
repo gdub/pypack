@@ -1,6 +1,5 @@
-syntax: glob
 *.pyc
 *~
 .*project
-dist/*
+dist/
 *egg-info*

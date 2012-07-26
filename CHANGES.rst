@@ -3,6 +3,11 @@ Changes
 =======
 
 
+0.8.2 - In development
+======================
+* New repo location, converted from hg to git.
+
+
 0.8.1 - July 8, 2011
 ====================
 * Fixed installation via PyPI, including the addition of

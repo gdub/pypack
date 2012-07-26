@@ -10,7 +10,7 @@ setup(
     name='python-package-template',
     version=pypack.__version__,
     author='Gary Wilson Jr.',
-    author_email='gary.wilson@gmail.com',
+    author_email='gary@thegarywilson.com',
     packages=['pypack'],
     entry_points={
         'console_scripts': [
