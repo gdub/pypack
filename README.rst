@@ -3,10 +3,10 @@ python-package-template (pypack)
 ================================
 
 Provides a command to easily create a standard Python package layout (i.e.
-README, package directory, etc.), following the `Hitchhiker's Guide to
-Packaging`_.
+README, package directory, etc.), following the `Python Packaging User
+Guide`_.
 
-.. _Hitchhiker's Guide to Packaging: http://guide.python-distribute.org/
+.. _Python Packaging User Guide: https://packaging.python.org/
 
 
 Features
