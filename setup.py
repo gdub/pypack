@@ -21,4 +21,10 @@ setup(
                  " package layout (i.e. package directory, README file,"
                  " setup.py, etc.)."),
     long_description=open('README.rst').read(),
+    classifiers = [
+	'Intended Audience :: Developers',
+	'License :: OSI Approved :: BSD License',
+	'Operating System :: OS Independent',
+	'Programming Language :: Python :: 3',
+    ],
 )
