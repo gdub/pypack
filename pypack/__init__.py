@@ -73,7 +73,6 @@ class PackageBuilder(object):
         if contents is None:
             self.contents = [
                 File('CHANGES.txt', 'changes.txt'),
-                File('distribute_setup.py', substitutions=False),
                 File('LICENSE.txt', 'license.txt'),
                 File('MANIFEST.in', 'manifest.txt'),
                 File('README.txt', 'readme.txt'),
@@ -97,7 +96,6 @@ class PackageBuilder(object):
             'date': datetime.date.today().strftime('%B %d, %Y'),
             'version': options.version,
             'manifest_items': """\
-include distribute_setup.py
 include *.txt
 recursive-include docs *.txt
 prune dist""",
