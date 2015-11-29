@@ -126,6 +126,6 @@ prune dist""",
             os.mkdir(self.target_dir)
         #os.mkdir(self.pkg_dir)
         for content in self.contents:
-            print "creating file:", os.path.join(self.pkg_dir, content.path)
+            print("creating file: {}".format(os.path.join(self.pkg_dir, content.path)))
             content.copy_to(self.target_dir,
                             self.build_context(self.name, self.options))
